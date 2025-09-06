@@ -3,455 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WithLove - Advanced Video Platform</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet">
+    <title>WithLove - Stories That Matter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-spinner"></div>
-        <h2>VideoTube</h2>
-        <p>Loading your video experience...</p>
-    </div>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>WithLove</h1>
+                <p class="tagline">Stories That Matter</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Authentication Modal -->
-    <div id="auth-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="auth-container">
-                <div class="auth-tabs">
-                    <button class="auth-tab active" data-tab="login">Sign In</button>
-                    <button class="auth-tab" data-tab="register">Sign Up</button>
-                </div>
+    <main class="main">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Sharing Stories of Courage, Hope, and Humanity</h2>
+                <p>In a world filled with noise, we choose to amplify the voices that truly matter.</p>
+                <a href="#stories" class="cta-button">Read Our Stories</a>
+            </div>
+        </section>
+
+        <section id="stories" class="stories">
+            <div class="container">
+                <h2 class="section-title">Latest Stories</h2>
                 
-                <!-- Login Form -->
-                <form id="login-form" class="auth-form active">
-                    <h2>Welcome Back</h2>
-                    <div class="form-group">
-                        <input type="email" id="login-email" placeholder="Email" required>
-                        <span class="material-icons">email</span>
+                <article class="story-card featured">
+                    <div class="story-image">
+                        <img src="images/hero-image.svg" alt="Ukrainian soldiers" />
                     </div>
-                    <div class="form-group">
-                        <input type="password" id="login-password" placeholder="Password" required>
-                        <span class="material-icons">lock</span>
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="date">September 6, 2025</span>
+                            <span class="category">War Stories</span>
+                        </div>
+                        <h3 class="story-title">The Angels Who Would Not Leave Them Behind</h3>
+                        <p class="story-excerpt">For three years, four Ukrainian soldiers lived in hiding inside a hospital in Russian-occupied territory. Their rescue would become a testament to unwavering loyalty and courage...</p>
+                        <a href="story-angels.html" class="read-more">Read Full Story</a>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign In</button>
-                    <p class="auth-switch">Don't have an account? <a href="#" onclick="switchAuthTab('register')">Sign up</a></p>
-                </form>
+                </article>
+            </div>
+        </section>
 
-                <!-- Register Form -->
-                <form id="register-form" class="auth-form">
-                    <h2>Join WithLove</h2>
-                    <div class="form-group">
-                        <input type="text" id="register-username" placeholder="Username" required>
-                        <span class="material-icons">person</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="register-email" placeholder="Email" required>
-                        <span class="material-icons">email</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="register-password" placeholder="Password" required>
-                        <span class="material-icons">lock</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="register-confirm" placeholder="Confirm Password" required>
-                        <span class="material-icons">lock</span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
-                    <p class="auth-switch">Already have an account? <a href="#" onclick="switchAuthTab('login')">Sign in</a></p>
-                </form>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About WithLove</h2>
+                <div class="about-content">
+                    <p>WithLove is a platform dedicated to sharing stories that remind us of our shared humanity. In times of division and uncertainty, we believe in the power of authentic storytelling to bridge differences and inspire hope.</p>
+                    <p>Our mission is to amplify voices of courage, resilience, and compassion - stories that might otherwise go untold but deserve to be heard by the world.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>WithLove</h3>
+                    <p>Stories That Matter</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#stories">Stories</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WithLove. All rights reserved.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Main Application -->
-    <div id="app" class="app">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-left">
-                <button class="menu-btn" id="menu-toggle">
-                    <span class="material-icons">menu</span>
-                </button>
-                <div class="logo">
-                    <span class="material-icons">play_circle_filled</span>
-                    <h1>WithLove</h1>
-                </div>
-            </div>
-            
-            <div class="header-center">
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search videos, channels...">
-                    <button class="search-btn" id="search-btn">
-                        <span class="material-icons">search</span>
-                    </button>
-                    <button class="voice-search-btn">
-                        <span class="material-icons">mic</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="header-right">
-                <button class="header-btn" id="upload-btn" title="Upload Video">
-                    <span class="material-icons">video_call</span>
-                </button>
-                <button class="header-btn" id="notifications-btn" title="Notifications">
-                    <span class="material-icons">notifications</span>
-                    <span class="notification-badge hidden">0</span>
-                </button>
-                <div class="user-menu" id="user-menu">
-                    <button class="user-avatar" id="user-avatar">
-                        <span class="material-icons">account_circle</span>
-                    </button>
-                    <div class="user-dropdown hidden" id="user-dropdown">
-                        <div class="user-info">
-                            <div class="user-avatar-large">
-                                <span class="material-icons">account_circle</span>
-                            </div>
-                            <div class="user-details">
-                                <h3 id="user-display-name">Guest</h3>
-                                <p id="user-email">Not signed in</p>
-                            </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item" onclick="showProfile()">
-                            <span class="material-icons">person</span>
-                            Your Channel
-                        </a>
-                        <a href="#" class="dropdown-item" onclick="showSettings()">
-                            <span class="material-icons">settings</span>
-                            Settings
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item" id="auth-action" onclick="toggleAuth()">
-                            <span class="material-icons">login</span>
-                            Sign In
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <nav class="sidebar-nav">
-                <div class="nav-section">
-                    <a href="#" class="nav-item active" data-page="home">
-                        <span class="material-icons">home</span>
-                        <span>Home</span>
-                    </a>
-                    <a href="#" class="nav-item" data-page="trending">
-                        <span class="material-icons">trending_up</span>
-                        <span>Trending</span>
-                    </a>
-                    <a href="#" class="nav-item" data-page="subscriptions">
-                        <span class="material-icons">subscriptions</span>
-                        <span>Subscriptions</span>
-                    </a>
-                </div>
-                
-                <div class="nav-divider"></div>
-                
-                <div class="nav-section">
-                    <a href="#" class="nav-item" data-page="library">
-                        <span class="material-icons">video_library</span>
-                        <span>Library</span>
-                    </a>
-                    <a href="#" class="nav-item" data-page="history">
-                        <span class="material-icons">history</span>
-                        <span>History</span>
-                    </a>
-                    <a href="#" class="nav-item" data-page="liked">
-                        <span class="material-icons">thumb_up</span>
-                        <span>Liked Videos</span>
-                    </a>
-                    <a href="#" class="nav-item" data-page="watchlater">
-                        <span class="material-icons">watch_later</span>
-                        <span>Watch Later</span>
-                    </a>
-                </div>
-                
-                <div class="nav-divider"></div>
-                
-                <div class="nav-section">
-                    <h3 class="nav-title">Subscriptions</h3>
-                    <div id="subscribed-channels">
-                        <!-- Dynamic subscription list -->
-                    </div>
-                </div>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content" id="main-content">
-            <!-- Home Page -->
-            <div id="page-home" class="page active">
-                <div class="video-grid" id="video-grid">
-                    <!-- Dynamic video cards -->
-                </div>
-            </div>
-
-            <!-- Video Player Page -->
-            <div id="page-watch" class="page">
-                <div class="watch-container">
-                    <div class="video-player-container">
-                        <video id="video-player" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}">
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a 
-                                <a href="https://videojs.com/html5-video-support/" target="_blank">web browser that supports HTML5 video.</a>
-                            </p>
-                        </video>
-                        
-                        <div class="video-info">
-                            <h1 id="video-title">Video Title</h1>
-                            <div class="video-stats">
-                                <span id="video-views">0 views</span>
-                                <span>•</span>
-                                <span id="video-date">Today</span>
-                            </div>
-                            
-                            <div class="video-actions">
-                                <button class="action-btn" id="like-btn">
-                                    <span class="material-icons">thumb_up</span>
-                                    <span id="like-count">0</span>
-                                </button>
-                                <button class="action-btn" id="dislike-btn">
-                                    <span class="material-icons">thumb_down</span>
-                                </button>
-                                <button class="action-btn">
-                                    <span class="material-icons">share</span>
-                                    Share
-                                </button>
-                                <button class="action-btn">
-                                    <span class="material-icons">playlist_add</span>
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="channel-info">
-                            <div class="channel-avatar">
-                                <span class="material-icons">account_circle</span>
-                            </div>
-                            <div class="channel-details">
-                                <h3 id="channel-name">Channel Name</h3>
-                                <p id="channel-subscribers">0 subscribers</p>
-                                <p id="video-description">Video description...</p>
-                            </div>
-                            <button class="subscribe-btn" id="subscribe-btn">Subscribe</button>
-                        </div>
-                    </div>
-                    
-                    <div class="sidebar-content">
-                        <h3>Up Next</h3>
-                        <div id="related-videos">
-                            <!-- Related videos -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="comments-section">
-                    <h3 id="comments-count">0 Comments</h3>
-                    <div class="comment-form">
-                        <div class="comment-avatar">
-                            <span class="material-icons">account_circle</span>
-                        </div>
-                        <div class="comment-input-container">
-                            <input type="text" id="comment-input" placeholder="Add a public comment...">
-                            <div class="comment-actions">
-                                <button class="btn btn-text" onclick="clearComment()">Cancel</button>
-                                <button class="btn btn-primary" id="post-comment-btn">Comment</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="comments-list">
-                        <!-- Comments -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Upload Page -->
-            <div id="page-upload" class="page">
-                <div class="upload-container">
-                    <h2>Upload Video</h2>
-                    <div class="upload-area" id="upload-area">
-                        <div class="upload-icon">
-                            <span class="material-icons">cloud_upload</span>
-                        </div>
-                        <h3>Drag and drop video files to upload</h3>
-                        <p>Your videos will be private until you publish them.</p>
-                        <input type="file" id="video-file-input" accept="video/*" multiple>
-                        <button class="btn btn-primary" onclick="document.getElementById('video-file-input').click()">
-                            Select Files
-                        </button>
-                    </div>
-                    
-                    <div class="upload-form hidden" id="upload-form">
-                        <div class="form-section">
-                            <h3>Video Details</h3>
-                            <div class="form-group">
-                                <label for="video-title-input">Title *</label>
-                                <input type="text" id="video-title-input" maxlength="100" required>
-                                <span class="char-count">0/100</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="video-description-input">Description</label>
-                                <textarea id="video-description-input" maxlength="5000" rows="5"></textarea>
-                                <span class="char-count">0/5000</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="video-category">Category</label>
-                                <select id="video-category">
-                                    <option value="entertainment">Entertainment</option>
-                                    <option value="education">Education</option>
-                                    <option value="music">Music</option>
-                                    <option value="gaming">Gaming</option>
-                                    <option value="news">News</option>
-                                    <option value="sports">Sports</option>
-                                    <option value="technology">Technology</option>
-                                    <option value="travel">Travel</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="video-thumbnail">Custom Thumbnail (Optional)</label>
-                                <div class="thumbnail-upload-area">
-                                    <input type="file" id="video-thumbnail" accept="image/*">
-                                    <div class="thumbnail-preview" id="thumbnail-preview">
-                                        <span class="material-icons">image</span>
-                                        <p>Click to upload custom thumbnail</p>
-                                        <small>Recommended: 1280x720 (16:9 ratio)</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <h3>Visibility</h3>
-                            <div class="visibility-options">
-                                <label class="radio-option">
-                                    <input type="radio" name="visibility" value="public" checked>
-                                    <span class="radio-custom"></span>
-                                    <div class="option-details">
-                                        <strong>Public</strong>
-                                        <p>Anyone can search for and view</p>
-                                    </div>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="visibility" value="unlisted">
-                                    <span class="radio-custom"></span>
-                                    <div class="option-details">
-                                        <strong>Unlisted</strong>
-                                        <p>Anyone with the link can view</p>
-                                    </div>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="visibility" value="private">
-                                    <span class="radio-custom"></span>
-                                    <div class="option-details">
-                                        <strong>Private</strong>
-                                        <p>Only you can view</p>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="upload-progress hidden" id="upload-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="progress-fill"></div>
-                            </div>
-                            <p id="progress-text">Uploading... 0%</p>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button class="btn btn-text" onclick="cancelUpload()">Cancel</button>
-                            <button class="btn btn-primary" id="publish-btn">Publish</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Profile/Channel Page -->
-            <div id="page-profile" class="page">
-                <div class="channel-header">
-                    <div class="channel-banner"></div>
-                    <div class="channel-info">
-                        <div class="channel-avatar-large">
-                            <span class="material-icons">account_circle</span>
-                        </div>
-                        <div class="channel-details">
-                            <h1 id="profile-channel-name">Your Channel</h1>
-                            <p id="profile-subscriber-count">0 subscribers</p>
-                            <p id="profile-video-count">0 videos</p>
-                        </div>
-                        <button class="btn btn-outline" onclick="editProfile()">Customize Channel</button>
-                    </div>
-                </div>
-                
-                <div class="channel-content">
-                    <div class="channel-tabs">
-                        <button class="tab-btn active" data-tab="videos">Videos</button>
-                        <button class="tab-btn" data-tab="playlists">Playlists</button>
-                        <button class="tab-btn" data-tab="about">About</button>
-                    </div>
-                    
-                    <div class="tab-content">
-                        <div id="tab-videos" class="tab-panel active">
-                            <div class="video-grid" id="profile-videos">
-                                <!-- User's videos -->
-                            </div>
-                        </div>
-                        <div id="tab-playlists" class="tab-panel">
-                            <div class="playlist-grid">
-                                <!-- User's playlists -->
-                            </div>
-                        </div>
-                        <div id="tab-about" class="tab-panel">
-                            <div class="about-content">
-                                <h3>About this channel</h3>
-                                <p id="channel-description">No description available.</p>
-                                <div class="channel-stats">
-                                    <div class="stat">
-                                        <strong id="total-views">0</strong>
-                                        <span>views</span>
-                                    </div>
-                                    <div class="stat">
-                                        <strong id="join-date">Today</strong>
-                                        <span>joined</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- Notification Panel -->
-    <div id="notification-panel" class="notification-panel hidden">
-        <div class="notification-header">
-            <h3>Notifications</h3>
-            <button class="btn btn-text" onclick="markAllAsRead()">Mark all as read</button>
-        </div>
-        <div id="notifications-list">
-            <!-- Notifications -->
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://vjs.zencdn.net/8.6.1/video.js"></script>
-    <script src="js/database.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/video.js"></script>
-    <script src="js/comments.js"></script>
-    <script src="js/notifications.js"></script>
-    <script src="js/app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
